@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers Explorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <header>
+        <nav class="bg-blue-600 text-white p-4">
+            <h1 class="text-2xl font-bold">Numbers Explorer</h1>
+        </nav>
+    </header>
+    <main class="container mx-auto p-4">
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">Find Number Facts</h2>
+            <!-- search form -->
+            <form id="search-form" class="bg-white p-4 rounded-lg shadow mb-6">
+                <label for="number-input" class="block mb-2">Enter a number:</label>
+                <div class="flex gap-2">
+                    <input type="number" id="number-input" class="flex-1 p-2 border rounded" placeholder="What's your favorite number?">
+                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">
+                        Search
+                    </button>
+                </div>
+            </form>
+            <!-- Results section -->
+            <section id="numbers-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            </section>
+        </section>
+    </main>
+    <!-- Modal -->
+    <aside id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <article class="bg-white p-4 rounded max-w-md w-full mx-4">
+            <header>
+                <h3 id="modal-title" class="text-xl font-bold mb-4"></h3>
+            </header>
+            <section id="modal-content" class="mb-4"></section>
+            <footer>
+                <button onclick="closeModal()" class="bg-blue-600 text-white px-4 py-2 rounded">Close</button>
+            </footer>
+        </article>
+    </aside>
+    <script src="app.js"></script>
+</body>
+</html> 
