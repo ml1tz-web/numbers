@@ -4,7 +4,8 @@ const numbers = [42, 7, 13, 21, 100, 365];
 // Retrievs a fact about a number
 async function getNumberFact(number, type = '') {
     try {
-        const url = `https://numbersapi.com/${number}${type ? '/' + type : ''}?json`;
+        const apiUrl = `http://numbersapi.com/${number}${type ? '/' + type : ''}?json`;
+        const url = `https://api.allorigins.win/raw?url=${encodeURIComponent(apiUrl)}`;
         const response = await fetch(url);
         
         if (!response.ok) {
