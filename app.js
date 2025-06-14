@@ -5,6 +5,7 @@ const numbers = [42, 7, 13, 21, 100, 365];
 async function getNumberFact(number, type = '') {
     try {
         const apiUrl = `http://numbersapi.com/${number}${type ? '/' + type : ''}?json`;
+        //it didn't work when deployed so I had to use CORS proxy to solve it
         const url = `https://api.allorigins.win/raw?url=${encodeURIComponent(apiUrl)}`;
         const response = await fetch(url);
         
